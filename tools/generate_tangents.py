@@ -187,8 +187,13 @@ def embed_tangents_gltf(mesh_path: Path, tangents: np.ndarray) -> bool:
         print(f"Info: GLTF embedding loaded successfully for {mesh_path}", file=sys.stderr)
         print("Info: Full GLTF tangent embedding not yet implemented", file=sys.stderr)
         
-        # Save with tangents (placeholder for now)
-        # gltf.save(str(mesh_path))
+        # TODO: Implement full GLTF tangent embedding by:
+        # 1. Creating a new buffer for tangent data
+        # 2. Adding a buffer view for the tangent buffer
+        # 3. Adding an accessor for TANGENT attribute
+        # 4. Updating mesh primitive to reference TANGENT accessor
+        # 5. Saving the modified GLTF file
+        # Once implemented, uncomment: gltf.save(str(mesh_path))
         
         return True
         
