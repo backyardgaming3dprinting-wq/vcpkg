@@ -329,6 +329,7 @@ pythonenv3.8/
 venv/
 # CMake build directories
 app/build/
+app/_codeql_build_dir/
 # Python cache
 *.pyc
 __pycache__/
@@ -337,4 +338,6 @@ __pycache__/
 .coverage
 coverage.xml
 htmlcov/
+# CodeQL artifacts
+_codeql_detected_source_root
 

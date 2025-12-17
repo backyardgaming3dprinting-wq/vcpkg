@@ -1,1 +1,0 @@
-/home/runner/work/vcpkg/.codeql-scratch/dbs/cpp/working/autobuild/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/mesh_core_tests.dir/link.d CMakeFiles/mesh_core_tests.dir/src/mesh_core/mesh_core_tests.cpp.o -o mesh_core_tests
