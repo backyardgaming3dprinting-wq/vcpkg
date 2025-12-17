@@ -1,4 +1,0 @@
-/home/runner/work/vcpkg/vcpkg/app/build/CMakeFiles/mesh_core_tests.dir
-/home/runner/work/vcpkg/vcpkg/app/build/CMakeFiles/test.dir
-/home/runner/work/vcpkg/vcpkg/app/build/CMakeFiles/edit_cache.dir
-/home/runner/work/vcpkg/vcpkg/app/build/CMakeFiles/rebuild_cache.dir

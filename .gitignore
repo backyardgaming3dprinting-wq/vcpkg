@@ -322,3 +322,19 @@ prefab/
 pythonenv3.8/
 .venv/
 
+###################
+# Project specific
+###################
+# Python virtual environment
+venv/
+# CMake build directories
+app/build/
+# Python cache
+*.pyc
+__pycache__/
+# Test artifacts
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
