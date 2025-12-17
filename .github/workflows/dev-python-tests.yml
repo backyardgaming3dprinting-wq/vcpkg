@@ -1,0 +1,58 @@
+name: Python Tests
+
+on:
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'tools/**'
+      - 'tests/**'
+      - 'requirements-dev.txt'
+      - '.github/workflows/dev-python-tests.yml'
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'tools/**'
+      - 'tests/**'
+      - 'requirements-dev.txt'
+      - '.github/workflows/dev-python-tests.yml'
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+      fail-fast: false
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest pytest-cov
+        pip install -r requirements-dev.txt || true
+      continue-on-error: true
+
+    - name: Run tests
+      run: |
+        pytest tests/ -v --tb=short
+      continue-on-error: false
+
+    - name: Run tests with coverage
+      if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
+      run: |
+        pytest tests/ --cov=tools --cov-report=xml --cov-report=term
+
+    - name: Upload coverage to artifacts
+      if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: coverage.xml

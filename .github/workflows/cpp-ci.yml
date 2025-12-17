@@ -1,0 +1,73 @@
+name: C++ CI
+
+on:
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'app/**'
+      - '.github/workflows/cpp-ci.yml'
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'app/**'
+      - '.github/workflows/cpp-ci.yml'
+
+jobs:
+  build-and-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        build-type: [Debug, Release]
+      fail-fast: false
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install CMake
+      uses: jwlawson/actions-setup-cmake@v1
+      with:
+        cmake-version: '3.20.x'
+
+    - name: Configure CMake (Unix)
+      if: runner.os != 'Windows'
+      working-directory: ${{ github.workspace }}/app
+      run: |
+        mkdir -p build
+        cd build
+        cmake .. -DCMAKE_BUILD_TYPE=${{ matrix.build-type }}
+
+    - name: Configure CMake (Windows)
+      if: runner.os == 'Windows'
+      working-directory: ${{ github.workspace }}/app
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+
+    - name: Build (Unix)
+      if: runner.os != 'Windows'
+      working-directory: ${{ github.workspace }}/app/build
+      run: cmake --build . --config ${{ matrix.build-type }}
+
+    - name: Build (Windows)
+      if: runner.os == 'Windows'
+      working-directory: ${{ github.workspace }}/app/build
+      run: cmake --build . --config ${{ matrix.build-type }}
+
+    - name: Test (Unix)
+      if: runner.os != 'Windows'
+      working-directory: ${{ github.workspace }}/app/build
+      run: ctest --output-on-failure --build-config ${{ matrix.build-type }}
+
+    - name: Test (Windows)
+      if: runner.os == 'Windows'
+      working-directory: ${{ github.workspace }}/app/build
+      run: ctest -C ${{ matrix.build-type }} --output-on-failure
+
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results-${{ matrix.os }}-${{ matrix.build-type }}
+        path: app/build/Testing/

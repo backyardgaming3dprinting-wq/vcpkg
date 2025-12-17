@@ -1,0 +1,24 @@
+# Development dependencies for testing and tooling
+
+# Core testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# For tangent generation
+numpy>=1.20.0
+trimesh>=3.9.0
+
+# Optional: for GLTF/GLB embedding
+pygltflib>=1.15.0
+
+# Schema validation
+jsonschema>=4.0.0
+
+# Code quality
+flake8>=5.0.0
+black>=22.0.0
+mypy>=0.990
+
+# Documentation
+sphinx>=5.0.0
+sphinx-rtd-theme>=1.0.0
