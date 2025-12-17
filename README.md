@@ -6,8 +6,7 @@ https://github.com/microsoft/vcpkg-docs/blob/main/vcpkg/readme/vcpkg-README.md
 -->
 
 [🌐 Read in a different language](https://learn.microsoft.com/locale/?target=https%3A%2F%2Flearn.microsoft.com%2Fvcpkg%2F)
-
-# vcpkg overview
+\r\n\r\nvcpkg overview
 
 vcpkg is a free and open-source C/C++ package manager maintained by Microsoft
 and the C++ community. 
@@ -25,8 +24,7 @@ This tool and ecosystem are constantly evolving, and we always appreciate
 contributions! Learn how to start contributing with our [packaging
 tutorial](https://learn.microsoft.com/vcpkg/get_started/get-started-adding-to-registry) and [maintainer
 guide](https://learn.microsoft.com/vcpkg/contributing/maintainer-guide).
-
-# Get started
+\r\n\r\nGet started
 
 First, follow one of our quick start guides.
 
@@ -50,8 +48,7 @@ yourself](https://learn.microsoft.com/vcpkg/get_started/get-started-adding-to-re
 
 After you've gotten vcpkg installed and working, you may wish to [add
 tab completion to your terminal](https://learn.microsoft.com/vcpkg/commands/integrate#vcpkg-autocompletion).
-
-# Use vcpkg
+\r\n\r\nUse vcpkg
 
 Create a [manifest for your project's dependencies](https://learn.microsoft.com/vcpkg/consume/manifest-mode):
 
@@ -74,8 +71,7 @@ systems](https://learn.microsoft.com/vcpkg/concepts/build-system-integration#man
 
 For a short description of all available commands, run `vcpkg help`.
 Run `vcpkg help [topic]` for details on a specific topic.
-
-# Key features
+\r\n\r\nKey features
 
 vcpkg offers powerful features for your package management needs:
 
@@ -84,8 +80,7 @@ vcpkg offers powerful features for your package management needs:
 * [package and publish your own packages](https://learn.microsoft.com/vcpkg/concepts/registries)
 * [reuse your binary artifacts](https://learn.microsoft.com/vcpkg/users/binarycaching)
 * [enable offline scenarios with asset caching](https://learn.microsoft.com/vcpkg/concepts/asset-caching)
-
-# Contribute
+\r\n\r\nContribute
 
 vcpkg is an open source project, and is thus built with your contributions. Here
 are some ways you can contribute:
@@ -106,8 +101,7 @@ questions or comments.
 [contributing:submit-pr]: https://github.com/microsoft/vcpkg/pulls
 [contributing:coc]: https://opensource.microsoft.com/codeofconduct/
 [contributing:coc-faq]: https://opensource.microsoft.com/codeofconduct/
-  
-# Resources
+  \r\n\r\nResources
 
 * Ports: [Microsoft/vcpkg](<https://github.com/microsoft/vcpkg>)
 * Source code: [Microsoft/vcpkg-tool](<https://github.com/microsoft/vcpkg-tool>)
@@ -116,15 +110,13 @@ questions or comments.
 * Email: [vcpkg@microsoft.com](<mailto:vcpkg@microsoft.com>)
 * Discord: [\#include \<C++\>'s Discord server](<https://www.includecpp.org>), in the #🌏vcpkg channel
 * Slack: [C++ Alliance's Slack server](<https://cppalliance.org/slack/>), in the #vcpkg channel
-
-# License
+\r\n\r\nLicense
 
 The code in this repository is licensed under the MIT License. The libraries
 provided by ports are licensed under the terms of their original authors. Where
 available, vcpkg places the associated license(s) in the location
 [`installed/<triplet>/share/<port>/copyright`](https://learn.microsoft.com/vcpkg/contributing/maintainer-guide#install-copyright-file).
-
-# Security
+\r\n\r\nSecurity
 
 Most ports in vcpkg build the libraries in question using the original build
 system preferred by the original developers of those libraries, and download
@@ -134,8 +126,7 @@ being installed. If you must install it in an "air gapped" environment, consider
 instaling once in a non-"air gapped" environment, populating an [asset
 cache](https://learn.microsoft.com/vcpkg/users/assetcaching) shared with the otherwise "air gapped"
 environment.
-
-# Telemetry
+\r\n\r\nTelemetry
 
 vcpkg collects usage data in order to help us improve your experience. The data
 collected by Microsoft is anonymous. You can opt-out of telemetry by:
@@ -145,3 +136,5 @@ collected by Microsoft is anonymous. You can opt-out of telemetry by:
 - setting the `VCPKG_DISABLE_METRICS` environment variable
 
 Read more about vcpkg telemetry at [https://learn.microsoft.com/vcpkg/about/privacy](https://learn.microsoft.com/vcpkg/about/privacy).
+
+

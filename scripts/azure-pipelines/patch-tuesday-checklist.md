@@ -2,8 +2,7 @@
 * [ ] Install Azure PowerShell: https://docs.microsoft.com/en-us/powershell/azure/install-az-ps
 * [ ] Run `Connect-AzAccount -Subscription CPP_GITHUB`
 * [ ] Install Docker
-
-## Each Patch Tuesday:
+\r\n\r\nEach Patch Tuesday:
 * [ ] Check for depends:vm-update PRs and make relevant changes if possible.
 * [ ] Check for Service 360 alerts (possibly at https://aka.ms/s360 ?) against the service named
       "C++ VCPKG Validation" about vulnerable software we are installing in the VMs and update that.
@@ -25,3 +24,5 @@
 * [ ] Mint a new macOS base box.  (See instructions in `scripts/azure-pipelines/osx/README.md`)
 * [ ] Deploy the new base box to all hosts.
 * [ ] Update the software on the CTI's machine #1 to match.
+
+

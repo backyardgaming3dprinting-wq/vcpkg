@@ -89,8 +89,9 @@ npx ts-node ./file_script.ts --info-dir /mnt/vcpkg-ci/installed/vcpkg/info --out
 
 PR cache mode (pipeline example using `BCACHE_SAS_TOKEN` set as a secret variable):
 
-```sh
-# pipeline constructs the URL from the secret token and passes it to the script
+```sh\r\n\r\npipeline constructs the URL from the secret token and passes it to the script
 blob="https://vcpkgbinarycachewus.blob.core.windows.net/cache?${BCACHE_SAS_TOKEN}"
 npx --yes ts-node ./file_script_from_cache.ts --pr-hashes /path/to/pr-hashes.json --blob-base-url "$blob" --target-branch origin/master --out-dir ./scripts/list_files
 ```
+
+

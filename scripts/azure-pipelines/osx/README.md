@@ -1,10 +1,8 @@
 # `vcpkg-eg-mac` VMs
 
 This is the checklist for what the vcpkg team does when updating the macOS machines in the pool.
-
-## Creating new base images
-
-### Prerequisites
+\r\n\r\nCreating new base images
+\r\n\r\nPrerequisites
 
 - [ ] [macosvm](https://github.com/s-u/macosvm) allow-listed
   by macOS for arm64. Note that the directory 'Parallels' is still used when using `macosvm`
@@ -13,8 +11,7 @@ This is the checklist for what the vcpkg team does when updating the macOS machi
   although you'll need to sign in first: <https://developer.apple.com/downloads>  
   If you are doing this from a local macos box, you can skip to the "update the macos host" step.  
 - [ ] An Xcode Command Line Tools installer
-
-### Instructions (ARM64)
+\r\n\r\nInstructions (ARM64)
 
 - [ ] Go to https://dev.azure.com/vcpkg/public/_settings/agentqueues , pick the current osx queue,
       and delete one of the agents that are idle.
@@ -93,10 +90,8 @@ This is the checklist for what the vcpkg team does when updating the macOS machi
     ```
 - [ ] Go to https://dev.azure.com/vcpkg/public/_settings/agentqueues and create a new self hosted Agent pool named `PrOsx-YYYY-MM-DD-arm64` based on the current date. Grant microsoft.vcpkg.ci and microsoft.vcpkg.pr access.
 - [ ] Follow the "Deploying images" steps below for each machine in the fleet.
-
-## Deploying images
-
-### Running the VM
+\r\n\r\nDeploying images
+\r\n\r\nRunning the VM
 
 Run these steps on each machine to add to the fleet. Skip steps that were done implicitly above if this machine was used to build a box.
 
@@ -150,8 +145,7 @@ Run these steps on each machine to add to the fleet. Skip steps that were done i
 - [ ] Update the "vcpkg Macs" spreadsheet line for the machine with the new pool.
 
 [grab a PAT]: #getting-an-azure-pipelines-pat
-
-## Getting an Azure Pipelines PAT
+\r\n\r\nGetting an Azure Pipelines PAT
 
 Personal Access Tokens are an important part of this process,
 and they are fairly easy to generate.
@@ -164,3 +158,5 @@ and give it a custom defined scope that includes the
 "Agent pools: Read & manage" permission (you'll need to "Show all scopes"
 to access this).
 You can now copy this token and use it to allow machines to join.
+
+

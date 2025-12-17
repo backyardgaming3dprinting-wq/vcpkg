@@ -1,0 +1,1 @@
+syntax = "proto3"; package demo; service Greeter { rpc SayHello(HelloReq) returns (HelloResp); } message HelloReq { string name = 1; } message HelloResp { string msg = 1; }

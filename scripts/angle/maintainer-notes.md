@@ -8,9 +8,7 @@ Details:
    - This is an augmented version of WebKit's [CMakeLists.txt](https://github.com/WebKit/WebKit/blob/main/Source/ThirdParty/ANGLE/CMakeLists.txt), with vcpkg edits and additions.
 - `cmake-buildsystem/*.cmake`
    - These are configuration files based on [WebKit's approach](https://github.com/WebKit/WebKit/tree/main/Source/ThirdParty/ANGLE), but customized for vcpkg (and using `PlatformLinux` instead of `PlatformGTK`)
-
-
-## Updating the ANGLE vcpkg port
+\r\n\r\nUpdating the ANGLE vcpkg port
 
 1. Select a new ANGLE version
 
@@ -30,3 +28,5 @@ Recommendation: Follow the recommendations in the libANGLE "[Choosing an ANGLE b
 > opengl-registry should be latest before updating angle
 
 6. Complete all the other normal steps in the [Maintainer Guide](/docs/maintainers/maintainer-guide.md)
+
+

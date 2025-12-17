@@ -4,3 +4,4 @@ The documentation for this topic has been moved to the following articles in [Mi
 
 * [Using registries](https://learn.microsoft.com/vcpkg/users/registries)
 * [Creating registries](https://learn.microsoft.com/vcpkg/maintainers/registries)
+
